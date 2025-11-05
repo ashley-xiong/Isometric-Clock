@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
-import RealTimeClockCustom from '../views/RealTimeClockCustom.vue';
+import Home from '@/views/Home.vue'
+import RealTimeClockCustom from '@/views/RealTimeClockCustom.vue';
 
 const route = [
   {
@@ -17,5 +17,5 @@ const route = [
 
 export const router = createRouter({
   history: createWebHistory(),
-  route,
-});
+  routes: route
+})
