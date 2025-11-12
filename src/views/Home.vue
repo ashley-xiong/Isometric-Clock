@@ -11,15 +11,20 @@
     a couple of spots perfect for you! Whether or not you're here to study or just to pass the time
     we hope these current places can help your stay here relaxing!</p>
   </div>
-
   <div class="scenes">
-    <div class="cafe"></div>
-    <div class="library"></div>
-    <div class="bedroom"></div>
+    <div class="cafe">
+      <img src="../assets/Cafe-Image.jpg" alt="Cafe">
+    </div>
+    <div class="library">
+      <img src="../assets/Cafe-Image.jpg" alt="stand-in">
+    </div>
+    <div class="bedroom">
+      <img src="../assets/Cafe-Image.jpg" alt="stand-in2">
+    </div>
   </div>
 
   <div class="buttons">
-    <button class="clockcreation">Let's Travel!</button>
+    <button class="clockcreation">Let's Vibe!</button>
     <button class="timercreation">I wanna Study...</button>
   </div>
 </template>
@@ -46,25 +51,38 @@ div.entrance{
 }
 div.scenes{
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   gap:20px;
   div.cafe{
     height:200px;
     width:200px;
     background-color:mediumaquamarine;
     border-radius:50px;
+      img{
+        height:200px;
+        width:200px;
+      }
   }
   div.library{
     height:200px;
     width:200px;
     background-color:mediumaquamarine;
     border-radius:50px;
+      img{
+        height:200px;
+        width:200px;
+      }
   }
   div.bedroom{
     height:200px;
     width:200px;
     background-color:mediumaquamarine;
     border-radius:50px;
+    img{
+      height:200px;
+      width:200px;
+    }
   }
 }
 
