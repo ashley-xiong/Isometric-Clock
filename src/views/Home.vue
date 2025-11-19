@@ -23,10 +23,12 @@
     </div>
   </div>
 
-  <div class="buttons">
-    <button class="clockcreation">Let's Vibe!</button>
-    <button class="timercreation">I wanna Study...</button>
+<section class="Info-on-Pics">
+  <div class="bakery-info">
+    <h4>Rea's Bakery</h4>
+    <p>A family owned business</p>
   </div>
+</section>
 </template>
 
 <style scoped>
@@ -55,42 +57,30 @@ div.scenes{
   align-items: center;
   gap:20px;
   div.cafe{
-    height:200px;
-    width:200px;
-    background-color:mediumaquamarine;
-    border-radius:50px;
       img{
-        height:200px;
-        width:200px;
+        height:300px;
+        width:300px;
       }
   }
   div.library{
-    height:200px;
-    width:200px;
-    background-color:mediumaquamarine;
-    border-radius:50px;
       img{
-        height:200px;
-        width:200px;
+        height:300px;
+        width:300px;
       }
   }
   div.bedroom{
-    height:200px;
-    width:200px;
-    background-color:mediumaquamarine;
-    border-radius:50px;
     img{
-      height:200px;
-      width:200px;
+      height:300px;
+      width:300px;
     }
   }
 }
-
-div.buttons{
+section.Info-on-Pics{
   display:flex;
   justify-content: center;
-  align-items: center;
-  gap:30px;
-  flex-wrap:wrap;
+
+  div.bakery-info{
+    background-color:darkseagreen;
+  }
 }
 </style>

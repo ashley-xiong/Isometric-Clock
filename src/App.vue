@@ -7,7 +7,7 @@
     <header>
       <nav>
         <router-link :to="{name: 'Home'}">Home</router-link> /
-        <router-link :to="{name: 'RealTimeClockCustom'}">Real World Clock</router-link>
+        <router-link :to="{name: 'StartClockOrTimer'}">Create Scene</router-link>
       </nav>
     </header>
   </section>
