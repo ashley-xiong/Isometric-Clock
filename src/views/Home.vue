@@ -16,7 +16,7 @@
       <img src="../assets/Cafe-Image.jpg" alt="Cafe">
     </div>
     <div class="library">
-      <img src="../assets/Cafe-Image.jpg" alt="stand-in">
+      <img src="../assets/Library-Image.jpg" alt="Library">
     </div>
     <div class="bedroom">
       <img src="../assets/Cafe-Image.jpg" alt="stand-in2">
@@ -53,7 +53,7 @@ div.entrance{
 }
 div.scenes{
   display: flex;
-  justify-content: center;
+  justify-content:center;
   align-items: center;
   gap:20px;
   div.cafe{
@@ -78,6 +78,8 @@ div.scenes{
 section.Info-on-Pics{
   display:flex;
   justify-content: center;
+  padding-bottom:30px;
+
 
   div.bakery-info{
     background-color:darkseagreen;

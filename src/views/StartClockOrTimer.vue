@@ -3,15 +3,15 @@
 
 <template>
   <div class="title">
-    <h3>Choose your setting!</h3>
+    <h3>Clock or Timer?</h3>
   </div>
 
   <div class="scenes">
-    <div class="cafe">
-      <img src="../assets/Cafe-Image.jpg" alt="Cafe" />
+    <div class="clock">
+      <img src="../assets/Enchantris-Clock.jpg" alt="Clock Screen" />
     </div>
-    <div class="library">
-      <img src="../assets/Cafe-Image.jpg" alt="stand-in" />
+    <div class="timer">
+      <img src="../assets/Enchantris-Timer.jpg" alt="Timer Screen" />
     </div>
   </div>
 
@@ -23,7 +23,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
 div.title{
   display:flex;
   justify-content: center;
@@ -33,23 +33,24 @@ div.buttons{
   display:flex;
   justify-content: center;
   align-items: center;
-  gap:40px;
+  gap:300px;
+  padding-bottom:30px;
 }
 div.scenes{
   display: flex;
   justify-content: center;
   align-items: center;
   gap:20px;
-  div.cafe{
+  div.clock{
     img{
-      height:300px;
-      width:300px;
+      height:400px;
+      width:400px;
     }
   }
-  div.library{
+  div.timer{
     img{
-      height:300px;
-      width:300px;
+      height:400px;
+      width:400px;
     }
   }
 }
