@@ -1,4 +1,11 @@
-<script setup lang="ts">
+<script setup>
+import { ref } from 'vue'
+
+let cafeImage = ref('daytime.jpg')
+
+const setCafeImage = (image) => {
+  cafeImage.value = image
+}
 </script>
 
 <template>
@@ -16,21 +23,23 @@
 
   <div class="customizer">
     <div class="cafe-day">
-      <img src="../assets/Cafe-Image.jpg" alt="Cafe in the Day" />
+      <img :src="`../src/assets/cafe/${cafeImage}`" alt="Cafe in the Day" />
     </div>
   </div>
 
   <section class="button-customize-bottom">
-    <div class="day-option">
+    <div class="day-option" @click="setCafeImage('daytime.jpg')">
       <p>Daytime</p>
     </div>
-    <div class="night-option">
+    <div class="night-option" @click="setCafeImage('nighttime.jpg')">
       <p>Nighttime</p>
     </div>
   </section>
 
   <div class="begin-button">
-    <p>Start!</p>
+    <a href="http://localhost:5173/real-time-clock">
+      <p>Start!</p>
+    </a>
   </div>
 
 </template>
@@ -83,6 +92,10 @@ section.button-customize-bottom {
   padding: 5px 8px 48px 20px;
   text-align: center;
 
+    :hover{
+      background-color: blue;
+    }
+
   div.day-option {
     background-color: blanchedalmond;
     width: 100px;
@@ -106,5 +119,14 @@ div.begin-button{
   text-align: center;
   background-color: blanchedalmond;
   border-radius: 18px;
+
+  :hover{
+    background-color: blue;
+  }
+
+  a{
+    text-decoration: none;
+  }
 }
+
 </style>

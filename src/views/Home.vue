@@ -13,13 +13,13 @@
   </div>
   <div class="scenes">
     <div class="cafe">
-      <img src="../assets/Cafe-Image.jpg" alt="Cafe">
+      <img src="../assets/cafe/daytime.jpg" alt="Cafe">
     </div>
     <div class="library">
       <img src="../assets/Library-Image.jpg" alt="Library">
     </div>
     <div class="bedroom">
-      <img src="../assets/Cafe-Image.jpg" alt="stand-in2">
+      <img src="../assets/cafe/daytime.jpg" alt="stand-in2">
     </div>
   </div>
 

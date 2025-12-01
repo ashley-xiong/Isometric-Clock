@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue';
 import StartClockOrTimer from '@/views/StartClockOrTimer.vue';
 import RealTimeClockCustomize from '@/views/RealTimeClockCustomize.vue'
+import RealTimeClock from '@/views/RealTimeClock.vue'
 
 const route = [
   {
@@ -19,6 +20,11 @@ const route = [
     name: 'RealTimeClockCustomize',
     component: RealTimeClockCustomize,
   },
+  {
+    path: '/real-time-clock',
+    name: 'RealTimeClock',
+    component: RealTimeClock,
+  }
 ]
 
 export const router = createRouter({
