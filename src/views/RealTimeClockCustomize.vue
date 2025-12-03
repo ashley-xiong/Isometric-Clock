@@ -52,6 +52,10 @@ section.button-customize-top {
   gap: 80px;
   padding: 55px 5px 10px 10px;
   text-align: center;
+  cursor: pointer;
+    .section:hover .button-customize-top{
+      background-color: red;
+   }
 
   div.one-option {
     background-color: blanchedalmond;
@@ -91,6 +95,7 @@ section.button-customize-bottom {
   gap: 80px;
   padding: 5px 8px 48px 20px;
   text-align: center;
+  cursor: pointer;
 
     :hover{
       background-color: blue;

@@ -1,21 +1,20 @@
-<script setup lang="ts">
+<script setup>
+import RealTimeClock from '@/components/RealTimeClock.vue'
 </script>
 
 <template>
-  <h1>I wanna know know know know. WHAT IS LOVE!</h1>
-  <div class="Isometric-img">
-    <div class="cafe-day">
-      <img :src="`../src/assets/cafe/daytime.jpg`" alt="Cafe in the Day" />
-    </div>
-  </div>
-
+  <section class="container">
+    <img src="../../src/assets/cafe/daytime.jpg" alt="Cafe in the Day" />
+    <real-time-clock class="clock" />
+  </section>
 </template>
 
 <style scoped>
-div.Isometric-img {
+section.container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  background-color: lightpink;
 
   img {
     height: 400px;
