@@ -36,7 +36,7 @@ const setCafeImage = (image) => {
   </section>
 
   <div class="begin-button">
-    <a href="http://localhost:5173/real-time-clock">
+    <a href="http://localhost:5173/timer">
       <p>Start!</p>
     </a>
   </div>

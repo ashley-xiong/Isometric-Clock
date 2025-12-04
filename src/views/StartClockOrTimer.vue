@@ -19,7 +19,9 @@
     <a href="http://localhost:5173/real-time-clock-customize">
       <button class="clockcreation">Real-Time Clock</button>
     </a>
-    <button class="timercreation">Timer</button>
+    <a href="http://localhost:5173/timer-customize">
+      <button class="timercreation">Timer</button>
+    </a>
   </div>
 </template>
 

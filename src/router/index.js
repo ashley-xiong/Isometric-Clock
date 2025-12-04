@@ -3,7 +3,8 @@ import Home from '@/views/Home.vue';
 import StartClockOrTimer from '@/views/StartClockOrTimer.vue';
 import RealTimeClockCustomize from '@/views/RealTimeClockCustomize.vue'
 import RealTimeClock from '@/views/RealTimeClock.vue'
-
+import TimerCustomize from '@/views/TimerCustomize.vue'
+import Timer from '@/views/Timer.vue'
 const route = [
   {
     path: '/',
@@ -24,7 +25,17 @@ const route = [
     path: '/real-time-clock',
     name: 'RealTimeClock',
     component: RealTimeClock,
-  }
+  },
+  {
+    path:'/timer-customize',
+    name: 'TimerClockCustomize',
+    component: TimerCustomize,
+  },
+{
+  path: '/timer',
+  name: 'Timer',
+  component: Timer,
+}
 ]
 
 export const router = createRouter({
