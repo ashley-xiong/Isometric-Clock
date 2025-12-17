@@ -4,7 +4,7 @@ import PomoTimer from '@/components/PomoTimer.vue'
 
 <template>
   <section class="container">
-    <!-- <img src="../../src/assets/cafe/daytime.jpg" alt="Cafe in the Day" />  <-->
+    <img src="../../src/assets/cafe/daytime.jpg" alt="Cafe in the Day" />
     <pomo-timer class="timer"></pomo-timer>
   </section>
 </template>
@@ -17,9 +17,14 @@ section.container{
   background-color:lavender;
 
   img{
-    height: 400px;
-    width: 400px;
+    height: 600px;
+    width: 600px;
     padding: 20px 5px 10px 40px;
   }
 }
+
+  .timer{
+    height: 600px;
+    width: 800px;
+  }
 </style>

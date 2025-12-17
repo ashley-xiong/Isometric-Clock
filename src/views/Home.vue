@@ -3,30 +3,24 @@
 </script>
 
 <template>
-  <div class="entrance">
+  <section class="entrance">
     <h1>Enchantis Towne</h1>
     <div class="welcomepic"></div>
     <h3>Welcome to Enchantis Towne New Neighbor!</h3>
     <p>Enchantis is still a new currently developing town but no fret! We have
     a couple of spots perfect for you! Whether or not you're here to study or just to pass the time
     we hope these current places can help your stay here relaxing!</p>
-  </div>
-  <div class="scenes">
-    <div class="cafe">
-      <img src="../assets/cafe/daytime.jpg" alt="Cafe">
-    </div>
-    <div class="library">
-      <img src="../assets/Library-Image.jpg" alt="Library">
-    </div>
-    <div class="bedroom">
-      <img src="../assets/cafe/daytime.jpg" alt="stand-in2">
-    </div>
-  </div>
+  </section>
+  <section class="scenes">
+    <img src="../assets/cafe/daytime.jpg" alt="Cafe">
+    <img src="../assets/Library-Image.jpg" alt="Library">
+    <img src="../assets/cafe/daytime.jpg" alt="stand-in2">
+  </section>
 
 </template>
 
 <style scoped>
-div.entrance{
+section.entrance{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,38 +39,35 @@ div.entrance{
     border-radius:50px;
   }
 }
-div.scenes{
+section.scenes{
   display: flex;
   justify-content:center;
   align-items: center;
   gap:20px;
-  div.cafe{
-      img{
-        height:300px;
-        width:300px;
-      }
+
+  img{
+    height:180px;
+    width:180px;
   }
-  div.library{
-      img{
-        height:300px;
-        width:300px;
-      }
-  }
-  div.bedroom{
+}
+
+/*Overrides for tablet and up*/
+@media screen and (min-width:800px){
+  section.scenes{
     img{
-      height:300px;
-      width:300px;
+      height:250px;
+      width:250px;
     }
   }
 }
-section.Info-on-Pics{
-  display:flex;
-  justify-content: center;
-  padding-bottom:30px;
 
-
-  div.bakery-info{
-    background-color:darkseagreen;
+/*Overrides for desktop and up*/
+@media screen and (min-width:1200px){
+  section.scenes{
+    img{
+      height:400px;
+      width:400px;
+    }
   }
 }
 </style>

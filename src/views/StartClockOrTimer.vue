@@ -2,59 +2,64 @@
 </script>
 
 <template>
-  <div class="title">
-    <h3>Clock or Timer?</h3>
-  </div>
+  <h3>Clock or Timer?</h3>
 
-  <div class="scenes">
-    <div class="clock">
-      <img src="../assets/Enchantris-Clock.jpg" alt="Clock Screen" />
-    </div>
-    <div class="timer">
-      <img src="../assets/Enchantris-Timer.jpg" alt="Timer Screen" />
-    </div>
-  </div>
-
-  <div class="buttons">
+  <section class="Clock">
+    <img src="../assets/Enchantris-Clock.jpg" alt="Clock Screen" />
     <a href="http://localhost:5173/real-time-clock-customize">
       <button class="clockcreation">Real-Time Clock</button>
     </a>
-    <a href="http://localhost:5173/timer-customize">
-      <button class="timercreation">Timer</button>
-    </a>
-  </div>
+  </section>
+<section class="Timer">
+  <img src="../assets/Enchantris-Timer.jpg" alt="Timer Screen" />
+  <a href="http://localhost:5173/timer-customize">
+    <button class="timercreation">Timer</button>
+  </a>
+</section>
 </template>
 
 <style scoped>
-div.title{
+h3{
   display:flex;
   justify-content: center;
   align-items: center;
 }
-div.buttons{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  gap:300px;
-  padding-bottom:30px;
-}
-div.scenes{
+
+section.Clock{
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   gap:20px;
-  div.clock{
-    img{
-      height:400px;
-      width:400px;
-    }
-  }
-  div.timer{
-    img{
-      height:400px;
-      width:400px;
-    }
+
+  img{
+    height:500px;
+    width:500px;
   }
 }
+
+section.Timer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:20px;
+
+  img{
+    height:500px;
+    width:500px;
+  }
+}
+
+button.clockcreation{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+button.timercreation{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start;
+}
+
 
 </style>
