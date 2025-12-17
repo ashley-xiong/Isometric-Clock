@@ -1,134 +1,44 @@
 <script setup>
-import { ref } from 'vue'
-
-let cafeImage = ref('daytime.jpg')
-
-const setCafeImage = (image) => {
-  cafeImage.value = image}
+import Customization from '@/components/Customization.vue'
 </script>
 
 <template>
-  <section class="button-customize-top">
-    <div class="one-option">
-      <p>Cafe</p>
-    </div>
-    <div class="two-option">
-      <p>Library</p>
-    </div>
-    <div class="three-option">
-      <p>Bedroom</p>
+  <section class="container">
+    <customization></customization>
+    <div class="begin-button">
+      <a href=" http://localhost:5173/real-time-clock">
+        <p>Start!</p>
+      </a>
     </div>
   </section>
-
-  <div class="customizer">
-    <div class="cafe-day">
-      <img :src="`../src/assets/cafe/${cafeImage}`" alt="Cafe in the Day" />
-    </div>
-  </div>
-
-  <section class="button-customize-bottom">
-    <div class="day-option" @click="setCafeImage('daytime.jpg')">
-      <p>Daytime</p>
-    </div>
-    <div class="night-option" @click="setCafeImage('nighttime.jpg')">
-      <p>Nighttime</p>
-    </div>
-  </section>
-
-  <div class="begin-button">
-    <a href="http://localhost:5173/real-time-clock">
-      <p>Start!</p>
-    </a>
-  </div>
 </template>
 
 <style scoped>
-section.button-customize-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  padding: 55px 5px 10px 10px;
-  text-align: center;
-  cursor: pointer;
-  .section:hover .button-customize-top {
-    background-color: red;
-  }
+section.container {
+  background-color:lightblue;
 
-  div.one-option {
-    background-color: blanchedalmond;
-    width: 100px;
-    border-radius: 18px;
-  }
+  div.begin-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 25px;
 
-  div.two-option {
-    background-color: blanchedalmond;
-    width: 100px;
-    border-radius: 18px;
-  }
+    p {
+      text-align: center;
+      background-color: blanchedalmond;
+      border-radius: 10px;
+      padding-top: 15px;
+      width: 200px;
+      height: 40px;
+    }
 
-  div.three-option {
-    background-color: blanchedalmond;
-    width: 100px;
-    border-radius: 18px;
-  }
-}
+    p:hover {
+      background-color: lavenderblush;
+    }
 
-div.customizer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  img {
-    height: 400px;
-    width: 400px;
-    padding: 20px 5px 10px 40px;
-  }
-}
-
-section.button-customize-bottom {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  padding: 5px 8px 48px 20px;
-  text-align: center;
-  cursor: pointer;
-
-  :hover {
-    background-color: blue;
-  }
-
-  div.day-option {
-    background-color: blanchedalmond;
-    width: 100px;
-    padding: 5px;
-    border-radius: 18px;
-  }
-
-  div.night-option {
-    background-color: blanchedalmond;
-    width: 100px;
-    padding: 5px;
-    border-radius: 18px;
-  }
-}
-
-div.begin-button {
-  padding-bottom: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: blanchedalmond;
-  border-radius: 18px;
-
-  :hover {
-    background-color: blue;
-  }
-
-  a {
-    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
   }
 }
 </style>

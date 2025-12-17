@@ -1,5 +1,6 @@
 <script setup>
 import CurrentClock from '@/components/CurrentClock.vue'
+
 </script>
 
 <template>

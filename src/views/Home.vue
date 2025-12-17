@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <section class="entrance">
@@ -11,6 +9,7 @@
     a couple of spots perfect for you! Whether or not you're here to study or just to pass the time
     we hope these current places can help your stay here relaxing!</p>
   </section>
+
   <section class="scenes">
     <img src="../assets/cafe/daytime.jpg" alt="Cafe">
     <img src="../assets/Library-Image.jpg" alt="Library">
@@ -39,6 +38,7 @@ section.entrance{
     border-radius:50px;
   }
 }
+
 section.scenes{
   display: flex;
   justify-content:center;
