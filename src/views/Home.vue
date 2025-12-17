@@ -23,12 +23,6 @@
     </div>
   </div>
 
-<section class="Info-on-Pics">
-  <div class="bakery-info">
-    <h4>Rea's Bakery</h4>
-    <p>A family owned business</p>
-  </div>
-</section>
 </template>
 
 <style scoped>

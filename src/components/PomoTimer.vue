@@ -1,208 +1,238 @@
 <script setup>
-import { ref, computed, watch } from "vue";
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 
-let timer = null;
-const isRunning = ref(false);
-const isSession = ref(true);
+let timer = null
 
-const sessionLength = ref(25);
-const breakLength = ref(5);
+const totalSeconds = ref(0)
+const isPaused = ref(false)
 
-const sessionTime = () => sessionLength.value * 60;
-const breakTime = () => breakLength.value * 60;
+const sessionCount = ref(1)
+const breakCount = ref(1)
 
-const timeLeft = ref(sessionTime());
+const maxSessions = 4
+const MAX_BREAKS = maxSessions - 1
 
-const alarmSound = ref(null);
+const isBreak = ref(false)
 
-// ---------------------------
-// Formatting
-// ---------------------------
-const formattedTime = computed(() => {
-  const m = Math.floor(timeLeft.value / 60);
-  const s = timeLeft.value % 60;
-  return `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
-});
+const focus = ref(30)
+const breakTime = ref(10)
 
-// Progress bar width
-const progressWidth = computed(() => {
-  const total = isSession.value ? sessionTime() : breakTime();
-  return `${((total - timeLeft.value) / total) * 100}%`;
-});
+const hours = computed(() => String(Math.floor(totalSeconds.value / 3600)).padStart(2, '0'))
 
-// ---------------------------
-// Timer Logic
-// ---------------------------
-function startTimer() {
-  if (isRunning.value) return;
+const minutes = computed(() =>
+  String(Math.floor((totalSeconds.value % 3600) / 60)).padStart(2, '0'),
+)
 
-  isRunning.value = true;
+const seconds = computed(() => String(totalSeconds.value % 60).padStart(2, '0'))
+/* ---------- SESSION DISPLAY ---------- */
+const sessionInfo = computed(() =>
+  isBreak.value
+    ? `Break: ${breakCount.value}/${MAX_BREAKS}`
+    : `Session: ${sessionCount.value}/${maxSessions}`,
+)
+
+/* ---------- TITLE (updateTitle) ---------- */
+function updateTitle() {
+  const sessionType = isBreak.value ? 'BREAK' : 'FOCUS'
+  console.log(
+    `${sessionType} ${
+      isBreak.value ? breakCount.value : sessionCount.value
+    }/${isBreak.value ? MAX_BREAKS : maxSessions}`,
+  )
+}
+/* ---------- TIMER ---------- */
+function startTimer(seconds) {
+  clearInterval(timer)
+  totalSeconds.value = seconds
 
   timer = setInterval(() => {
-    if (timeLeft.value > 0) {
-      timeLeft.value--;
-    } else {
-      // timer ended
-      clearInterval(timer);
-      isRunning.value = false;
-
-      alarmSound.value.play();
-      alert(isSession.value ? "Session over! Time for a break." : "Break over! Time for a session.");
-
-      switchTimer();
+    if (!isPaused.value) {
+      totalSeconds.value--
     }
-  }, 1000);
+  }, 1000)
 }
 
-function stopTimer() {
-  clearInterval(timer);
-  isRunning.value = false;
+function startFocus() {
+  isBreak.value = false
+  startTimer(focus.value * 60)
+}
+function startBreak() {
+  if (breakCount.value <= MAX_BREAKS) {
+    isBreak.value = true
+    startTimer(breakTime.value * 60)
+  }
 }
 
+function addSession() {
+  if (!isBreak.value && sessionCount.value < maxSessions) {
+    sessionCount.value++
+  } else if (isBreak.value && breakCount.value < MAX_BREAKS) {
+    breakCount.value++
+  }
+  updateTitle()
+}
+
+function pauseTimer() {
+  isPaused.value = !isPaused.value
+}
 function resetTimer() {
-  clearInterval(timer);
-  isRunning.value = false;
-  isSession.value = true;
-  timeLeft.value = sessionTime();
+  clearInterval(timer)
+  totalSeconds.value = 0
+  sessionCount.value = 1
+  breakCount.value = 1
+  isPaused.value = false
+  isBreak.value = false
+  updateTitle()
 }
 
-function switchTimer() {
-  isSession.value = !isSession.value;
-  timeLeft.value = isSession.value ? sessionTime() : breakTime();
-  startTimer();
-}
+/* ---------- LIFECYCLE ---------- */
+onMounted(() => {
+  updateTitle()
+})
 
-// ---------------------------
-// React to input changes
-// ---------------------------
-watch(sessionLength, resetTimer);
-watch(breakLength, resetTimer);
+onBeforeUnmount(() => {
+  clearInterval(timer)
+})
 </script>
 
 <template>
-  <div class="container">
-    <h1>Pomodoro Timer</h1>
-
-    <div class="timer">
-      <div id="time">{{ formattedTime }}</div>
-      <div class="progress-bar" :style="{ width: progressWidth }"></div>
+  <section class="pomotime">
+    <div class="timer-display">
+      <div class="time-box" id="hours">{{hours}}</div>
+      <div class="time-box" id="minutes">{{minutes}}</div>
+      <div class="time-box" id="seconds">{{seconds}}</div>
     </div>
 
-    <div class="buttons">
-      <button @click="startTimer">Start</button>
-      <button @click="stopTimer">Stop</button>
-      <button @click="resetTimer">Reset</button>
-    </div>
+    <div class="session-box">{{sessionInfo}}</div>
 
     <div class="settings">
-      <label>Session Length:</label>
-      <input type="number" v-model.number="sessionLength" min="1" max="60"> minutes
+      <div class="setting">
+        <label for="focus">focus (min)</label>
+        <input type="number" v-model.number="focus" min="1" />
+        <button @click="startFocus()">Start Focus</button>
+      </div>
 
-      <label>Break Length:</label>
-      <input type="number" v-model.number="breakLength" min="1" max="30"> minutes
+      <div class="setting">
+        <label for="breakTime">break (min)</label>
+        <input type="number" v-model.number="breakTime" min="1" />
+        <button @click="startBreak()">Start Break</button>
+      </div>
+
+      <div class="controls">
+        <button @click="addSession()">Add session</button>
+        <button @click="pauseTimer()">Pause</button>
+        <button @click="resetTimer()">Reset</button>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
-body {
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+section.pomotime {
+  font-family:
+    URW Chancery L,
+    cursive;
+  background-color: papayawhip;
+  color: mediumpurple;
   margin: 0;
-  overflow: hidden;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@keyframes backgroundAnimation {
-  0% {
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  }
-  50% {
-    background: linear-gradient(120deg, #ff9a9e 0%, #fecfef 100%);
-  }
-  100% {
-    background: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
-  }
+.timer-display {
+  display: flex;
+  gap: 20px;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 14px;
+  margin-bottom: 20px;
 }
 
-.container {
+.time-box {
+  background-color: floralwhite;
+  padding: 16px 7px 16px 6px;
+  border-radius: 12px;
+  font-size: 6.5em;
+  font-weight: 400;
   text-align: center;
-  background: rgba(255, 255, 255, 0.9);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-}
-
-.container:hover {
-  transform: scale(1.05);
-}
-
-h1 {
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.timer {
-  position: relative;
-  font-size: 48px;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-#time {
-  animation: pulse 1s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-.progress-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 5px;
-  background: #84fab0;
-  transition: width 1s linear;
-}
-
-.buttons button {
-  background: #84fab0;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.buttons button:hover {
-  background: #8fd3f4;
-  transform: scale(1.1);
-}
-
-.buttons button:active {
-  transform: scale(1);
+  justify-content: center;
+  min-width: 98px;
 }
 
 .settings {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  background-color: transparent;
+  padding: 40px;
+  border-radius: 20px;
+  max-width: 700px;
 }
 
-input {
-  width: 50px;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+.setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
+
+input[type='number'] {
+  width: 70px;
+  padding: 10px;
+  font-size: 1.2em;
+  border-radius: 6px;
+  border: none;
   text-align: center;
-  margin-left: 10px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 9px 17px;
+  font-size: 1.3em;
+  background-color: floralwhite;
+  color: mediumpurple;
+  font-family:
+    URW Chancery L,
+    cursive;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: normal;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: white;
+}
+
+.controls {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -30px;
+}
+
+.session-box {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-top: -20px;
+  flex-wrap: wrap;
+}
+
+.session-box {
+  background-color: floralwhite;
+  padding: 9px 8px;
+  border-radius: 40px;
+  font-size: 1.6em;
+  font-weight: 400;
+  text-align: center;
+  min-width: 220px;
 }
 </style>
