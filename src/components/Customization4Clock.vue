@@ -32,27 +32,33 @@ section.button-customize-top {
   text-align: center;
   cursor: pointer;
 
+  a{
+    text-decoration: none;
+    font-weight: bold;
+    color:burlywood;
+  }
+
   div.one-option {
-    background-color: blanchedalmond;
+    background-color: rosybrown;
     width: 100px;
     border-radius: 18px;
   }
 
   div.two-option {
-    background-color: blanchedalmond;
+    background-color: rosybrown;
     width: 100px;
     border-radius: 18px;
   }
 
   div.three-option {
-    background-color: blanchedalmond;
+    background-color: rosybrown;
     width: 100px;
     border-radius: 18px;
   }
   div.one-option:hover,
   div.two-option:hover,
   div.three-option:hover {
-    background-color: lavenderblush;
+    background-color:navajowhite;
   }
 }
 

@@ -24,7 +24,7 @@ const toggleMusic = async () => {
   <section class="container">
     <mute class="nomusicnote"></mute>
     <unmute class="musicnote" @click="toggleMusic"></unmute>
-    <img src="../../src/assets/cafe/daytime.jpg" alt="Cafe in the Day" />
+    <img src="../../assets/cafe/nighttime.jpg" alt="Cafe in the Day" />
     <pomo-timer class="timer"></pomo-timer>
     <audio ref="bgm" loop>
       <source
@@ -51,14 +51,42 @@ section.container {
   }
 
   img {
-    height: 600px;
-    width: 600px;
+    height: 450px;
+    width: 450px;
     padding: 20px 5px 10px 40px;
   }
 }
 
 .timer {
   height: 600px;
-  width: 800px;
+  width: 500px;
+}
+
+@media screen and (min-width:800px){
+  section.container{
+    img{
+      width: 600px;
+      height: 600px;
+    }
+
+    .timer {
+      height: 600px;
+      width: 700px;
+    }
+  }
+}
+
+@media screen and (min-width:1200px){
+  section.container{
+    img{
+      width: 700px;
+      height: 700px;
+    }
+
+    .timer {
+      height: 600px;
+      width: 800px;
+    }
+  }
 }
 </style>

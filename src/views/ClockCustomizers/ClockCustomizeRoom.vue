@@ -1,15 +1,15 @@
 <script setup>
-import Customization from '@/components/Customization.vue'
+import Customization4Clock from '@/components/Customization4Clock.vue'
 
 </script>
 
 <template>
   <section class="container">
-    <customization></customization>
+    <Customization4Clock></Customization4Clock>
     <div class="content">
       <div class="day-option">
         <img src="../../assets/test.jpg" alt="Room Day"/>
-        <a href="http://localhost:5173/real-time-clock-cd">
+        <a href="http://localhost:5173/real-time-clock-rd">
           <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="mdi-white-balance-sunny"
                viewBox="0 0 24 24"><path d="M3.55 19.09L4.96 20.5L6.76 18.71L5.34 17.29M12 6C8.69 6
              6 8.69 6 12S8.69 18 12 18 18 15.31 18 12C18 8.68 15.31 6 12 6M20 13H23V11H20M17.24 18.71L19.04
@@ -20,7 +20,7 @@ import Customization from '@/components/Customization.vue'
       </div>
       <div class="night-option">
         <img src="../../assets/test.jpg" alt="Room Night"/>
-        <a href="http://localhost:5173/real-time-clock-cn">
+        <a href="http://localhost:5173/real-time-clock-rn">
           <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="mdi-weather-night" viewBox="0 0 24 24">
             <path d="M17.75,4.09L15.22,6.03L16.13,9.09L13.5,7.28L10.87,9.09L11.78,6.03L9.25,4.09L12.44,4L13.5,1L14.56,4L17.75,4.09M21.25,11L19.61,12.25L20.2,14.23L18.5,13.06L16.8,14.23L17.39,12.25L15.75,11L17.81,10.95L18.5,9L19.19,10.95L21.25,11M18.97,15.95C19.8,15.87 20.69,17.05 20.16,17.8C19.84,18.25 19.5,18.67 19.08,19.07C15.17,23 8.84,23 4.94,19.07C1.03,15.17 1.03,8.83 4.94,4.93C5.34,4.53 5.76,4.17 6.21,3.85C6.96,3.32 8.14,4.21 8.06,5.04C7.79,7.9 8.75,10.87 10.95,13.06C13.14,15.26 16.1,16.22 18.97,15.95M17.33,17.97C14.5,17.81 11.7,16.64 9.53,14.5C7.36,12.31 6.2,9.5 6.04,6.68C3.23,9.82 3.34,14.64 6.35,17.66C9.37,20.67 14.19,20.78 17.33,17.97Z" /></svg>
           <p>Nighttime</p>
@@ -32,7 +32,7 @@ import Customization from '@/components/Customization.vue'
 
 <style scoped>
 section.container {
-  background-color:lightblue;
+  background-color:aliceblue;
 }
 
 div.content{
@@ -42,9 +42,14 @@ div.content{
   gap: 80px;
   text-align: center;
   padding: 55px 5px 10px 10px;
+
+  a{
+    text-decoration: none;
+    color:midnightblue;
+  }
 }
 div.day-option {
-  background-color: blanchedalmond;
+  background-color: skyblue;
   width: 400px;
   border-radius: 18px;
 
@@ -60,7 +65,7 @@ div.day-option {
 }
 
 div.night-option {
-  background-color: blanchedalmond;
+  background-color: skyblue;
   width: 400px;
   border-radius: 18px;
 
@@ -76,7 +81,7 @@ div.night-option {
 }
 
 div.day-option:hover, div.night-option:hover {
-  background-color: lavenderblush;
+  background-color: cornflowerblue;
 }
 
 @media screen and (min-width:1200px){

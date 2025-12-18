@@ -13,7 +13,7 @@
 
   <section class="Timer">
     <img src="../assets/Enchantris-Timer.jpg" alt="Timer Screen" />
-    <a href="http://localhost:5173/timer-customize">
+    <a href="http://localhost:5173/timer-customize-cafe">
       <button class="timercreation">Timer</button>
     </a>
   </section>
