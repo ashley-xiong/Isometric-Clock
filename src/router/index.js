@@ -1,8 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue';
 import StartClockOrTimer from '@/views/StartClockOrTimer.vue';
-import ClockCustomizeCafeDay from '@/views/ClockCustomizers/ClockCustomizeCafeDay.vue'
-import RealTimeClock from '@/views/RealTimeClock.vue'
+import ClockCustomizeCafe from '@/views/ClockCustomizers/ClockCustomizeCafe.vue'
+import RealTimeClockCd from '@/views/Clocks/RealTimeClockCD.vue'
+import RealTimeClockCN from '@/views/Clocks/RealTimeClockCN.vue'
+import ClockCustomizeLibrary from '@/views/ClockCustomizers/ClockCustomizeLibrary.vue'
+import ClockCustomizeRoom from '@/views/ClockCustomizers/ClockCustomizeRoom.vue'
 import TimerCustomizeCafeDay from '@/views/TimerCustomizers/TimerCustomizeCafeDay.vue'
 import Timer from '@/views/Timer.vue'
 const route = [
@@ -17,14 +20,29 @@ const route = [
     component: StartClockOrTimer,
   },
   {
-    path: '/real-time-clock-customize',
+    path: '/real-time-clock-customize-cafe',
     name: 'RealTimeClockCustomize',
-    component: ClockCustomizeCafeDay,
+    component: ClockCustomizeCafe,
   },
   {
-    path: '/real-time-clock',
-    name: 'RealTimeClock',
-    component: RealTimeClock,
+    path: '/real-time-clock-cd',
+    name: 'RealTimeClockCD',
+    component: RealTimeClockCd,
+  },
+  {
+    path: '/real-time-clock-cn',
+    name: 'RealTimeClockCN',
+    component: RealTimeClockCN,
+  },
+  {
+    path:'/real-time-clock-customize-library',
+    name: 'RealTimeClockCustomizeLibrary',
+    component: ClockCustomizeLibrary,
+  },
+  {
+    path:'/real-time-clock-customize-room',
+    name: 'RealTimeClockCustomizeRoom',
+    component: ClockCustomizeRoom,
   },
   {
     path:'/timer-customize',

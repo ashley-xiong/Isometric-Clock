@@ -6,7 +6,7 @@
 
   <section class="Clock">
     <img src="../assets/Enchantris-Clock.jpg" alt="Clock Screen" />
-    <a href="http://localhost:5173/real-time-clock-customize">
+    <a href="http://localhost:5173/real-time-clock-customize-cafe">
       <button class="clockcreation">Real-Time Clock</button>
     </a>
   </section>

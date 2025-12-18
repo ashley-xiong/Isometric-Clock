@@ -20,15 +20,13 @@ const toggleMusic = async () => {
 
 }
 
-
-
 </script>
 
 <template>
   <section class="container">
     <mute class="nomusicnote"></mute>
     <unmute class="musicnote" @click="toggleMusic"></unmute>
-    <img src="../assets/cafe/daytime.jpg" alt="Cafe in the Day"/>
+    <img src="../../assets/cafe/daytime.jpg" alt="Cafe in the Day"/>
     <current-clock class="clock" />
     <audio ref="bgm" loop>
       <source
