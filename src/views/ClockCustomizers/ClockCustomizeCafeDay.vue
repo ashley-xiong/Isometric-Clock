@@ -1,5 +1,7 @@
 <script setup>
 import Customization from '@/components/Customization.vue'
+
+
 </script>
 
 <template>

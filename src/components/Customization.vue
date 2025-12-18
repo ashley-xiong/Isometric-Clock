@@ -4,12 +4,16 @@ import { ref } from 'vue'
 let cafeImage = ref('daytime.jpg')
 
 const setCafeImage = (image) => {
-  cafeImage.value = image}
+  cafeImage.value = image
+}
+
+
 </script>
 
 <template>
   <section class="button-customize-top">
     <div class="one-option">
+      <a href="../views/ClockCustomizers/ClockCustomizeCafeDay.vue"></a>
       <p>Cafe</p>
     </div>
     <div class="two-option">

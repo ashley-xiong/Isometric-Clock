@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue';
 import StartClockOrTimer from '@/views/StartClockOrTimer.vue';
-import RealTimeClockCustomize from '@/views/RealTimeClockCustomize.vue'
+import ClockCustomizeCafeDay from '@/views/ClockCustomizers/ClockCustomizeCafeDay.vue'
 import RealTimeClock from '@/views/RealTimeClock.vue'
-import TimerCustomize from '@/views/TimerCustomize.vue'
+import TimerCustomizeCafeDay from '@/views/TimerCustomizers/TimerCustomizeCafeDay.vue'
 import Timer from '@/views/Timer.vue'
 const route = [
   {
@@ -19,7 +19,7 @@ const route = [
   {
     path: '/real-time-clock-customize',
     name: 'RealTimeClockCustomize',
-    component: RealTimeClockCustomize,
+    component: ClockCustomizeCafeDay,
   },
   {
     path: '/real-time-clock',
@@ -29,7 +29,7 @@ const route = [
   {
     path:'/timer-customize',
     name: 'TimerClockCustomize',
-    component: TimerCustomize,
+    component: TimerCustomizeCafeDay,
   },
 {
   path: '/timer',
