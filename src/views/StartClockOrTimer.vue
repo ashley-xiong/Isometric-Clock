@@ -2,24 +2,29 @@
 </script>
 
 <template>
-  <h3>Clock or Timer?</h3>
+  <section class="container">
+    <h3>Clock or Timer?</h3>
 
-  <section class="Clock">
-    <img src="../assets/Enchantris-Clock.jpg" alt="Clock Screen" />
-    <a href="http://localhost:5173/real-time-clock-customize-cafe">
-      <button class="clockcreation">Real-Time Clock</button>
-    </a>
-  </section>
+    <section class="Clock">
+      <img src="../assets/Enchantris-Clock.jpg" alt="Clock Screen" />
+      <a href="http://localhost:5173/real-time-clock-customize-cafe">
+        <button class="clockcreation">Real-Time Clock</button>
+      </a>
+    </section>
 
-  <section class="Timer">
-    <img src="../assets/Enchantris-Timer.jpg" alt="Timer Screen" />
-    <a href="http://localhost:5173/timer-customize-cafe">
-      <button class="timercreation">Timer</button>
-    </a>
+    <section class="Timer">
+      <img src="../assets/Enchantris-Timer.jpg" alt="Timer Screen" />
+      <a href="http://localhost:5173/timer-customize-cafe">
+        <button class="timercreation">Timer</button>
+      </a>
+    </section>
   </section>
 </template>
 
 <style scoped>
+section.container{
+  background-color:cornsilk;
+}
 h3 {
   display: flex;
   justify-content: center;

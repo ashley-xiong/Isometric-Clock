@@ -20,6 +20,7 @@
 
 <style scoped>
 section.navigation{
+  background-color:cornsilk;
 
   div.links{
     display: flex;
@@ -43,7 +44,7 @@ section.navigation{
         bottom: 0;
         width: 0;
         height: 0;
-        border-bottom: 13px solid white;
+        border-bottom: 13px cornsilk solid;
         border-left: 55px solid transparent;
         border-right: 55px solid transparent;
       }
@@ -67,7 +68,7 @@ section.navigation{
         bottom: 0;
         width: 0;
         height: 0;
-        border-bottom: 13px solid white;
+        border-bottom: 13px cornsilk solid;
         border-left: 55px solid transparent;
         border-right: 55px solid transparent;
       }
@@ -91,7 +92,7 @@ section.navigation{
         bottom: 0;
         width: 0;
         height: 0;
-        border-bottom: 13px solid white;
+        border-bottom: 13px cornsilk solid;
         border-left: 55px solid transparent;
         border-right: 55px solid transparent;
       }
