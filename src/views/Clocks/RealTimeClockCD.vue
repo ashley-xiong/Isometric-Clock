@@ -30,7 +30,7 @@ const toggleMusic = async () => {
     <current-clock class="clock" />
     <audio ref="bgm" loop>
       <source
-        src="https://cdn.pixabay.com/audio/2023/07/22/audio_720626056a.mp3"
+        src="../../assets/music/cafemday.mp3"
         type="audio/mpeg"
       />
     </audio>

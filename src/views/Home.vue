@@ -12,8 +12,8 @@
 
   <section class="scenes">
     <img src="../assets/cafe/daytime.jpg" alt="Cafe">
-    <img src="../assets/Library-Image.jpg" alt="Library">
-    <img src="../assets/cafe/daytime.jpg" alt="stand-in2">
+    <img src="../assets/library/libraryday.jpg" alt="Library">
+    <img src="../assets/bedroom/roomday.jpg" alt="stand-in2">
   </section>
 
 </template>

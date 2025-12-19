@@ -133,7 +133,7 @@ section.pomotime {
     URW Chancery L,
     cursive;
   background-color: papayawhip;
-  color: mediumpurple;
+  color: saddlebrown;
   margin: 0;
   padding: 20px;
   display: flex;
@@ -194,7 +194,7 @@ button {
   padding: 9px 17px;
   font-size: 1.3em;
   background-color: floralwhite;
-  color: mediumpurple;
+  color: saddlebrown;
   font-family:
     URW Chancery L,
     cursive;

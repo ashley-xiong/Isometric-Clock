@@ -1,39 +1,28 @@
 <script setup>
-
+import NavBar from '@/components/NavBar.vue'
 </script>
 
 <template>
-  <section class="web-app-container">
-    <header>
-      <nav>
-        <router-link :to="{name: 'Home'}">Home</router-link> /
-        <router-link :to="{name: 'StartClockOrTimer'}">Create Scene</router-link>
-      </nav>
-    </header>
-  </section>
+  <NavBar></NavBar>
 
   <section>
     <router-view></router-view>
   </section>
 
   <footer>
-    Enchantis Towne 2025
+    <p>Enchantis Towne 2025</p>
   </footer>
 </template>
 
 <style scoped>
-section.web-app-container {
-  display:flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px solid red;
-  width:100%;
-}
+
 footer{
-  border: 3px solid red;
+  background:peachpuff;
+  height:30px;
   display:flex;
   flex-direction: column;
   align-items: center;
   width:100%;
+
 }
 </style>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/Home.vue';
 import StartClockOrTimer from '@/views/StartClockOrTimer.vue';
+import Enchantis from '@/views/Enchantis.vue'
 
 import ClockCustomizeCafe from '@/views/ClockCustomizers/ClockCustomizeCafe.vue'
 import RealTimeClockCD from '@/views/Clocks/RealTimeClockCD.vue'
@@ -36,6 +37,11 @@ const route = [
     path: '/customizer-start',
     name: 'StartClockOrTimer',
     component: StartClockOrTimer,
+  },
+  {
+    path: '/enchantis',
+    name: 'Enchantis',
+    component: Enchantis,
   },
   {
     path: '/real-time-clock-customize-cafe',

@@ -26,11 +26,11 @@ const toggleMusic = async () => {
   <section class="container">
     <mute class="nomusicnote"></mute>
     <unmute class="musicnote" @click="toggleMusic"></unmute>
-    <img src="../../assets/cafe/daytime.jpg" alt="Cafe in the Day"/>
+    <img src="../../assets/bedroom/roomday.jpg" alt="Bedroom in the Day"/>
     <current-clock class="clock" />
     <audio ref="bgm" loop>
       <source
-        src="https://cdn.pixabay.com/audio/2023/07/22/audio_720626056a.mp3"
+        src="../../assets/music/roommday.mp3"
         type="audio/mpeg"
       />
     </audio>
@@ -42,11 +42,11 @@ section.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: yellow;
+  background-color:lightsteelblue;
 
   .musicnote {
     align-self: flex-end;
-    background-color: palevioletred;
+    background-color: cornflowerblue;
     border-radius: 20px;
     width: 40px;
     height: 40px;
