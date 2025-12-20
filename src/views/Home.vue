@@ -5,7 +5,7 @@
   <section class="container">
     <section class="entrance">
       <h1>Enchantis Towne</h1>
-      <div class="welcomepic"></div>
+      <img class="welcomepic" src="../assets/enchantis.jpg" alt="beginning image">
       <h3>Welcome to Enchantis Towne New Neighbor!</h3>
       <p>Enchantis is still a new currently developing town but no fret! We have
     a couple of spots perfect for you! Whether or not you're here to study or just to pass the time
@@ -37,7 +37,7 @@ section.entrance{
     text-align:center;
     padding:10px 50px;
   }
-  div.welcomepic{
+  img.welcomepic{
     height:200px;
     width:400px;
     background-color:mediumaquamarine;
